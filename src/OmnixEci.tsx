@@ -12,6 +12,10 @@ import iconChat from './assets/sidebar/chat.svg';
 import iconFbMessage from './assets/sidebar/fb_message.svg';
 import iconIgMessage from './assets/sidebar/ig_message.svg';
 import iconTelegram from './assets/sidebar/Telegram.svg';
+import iconAppStore from './assets/sidebar/app_store.svg';
+import iconPlaystore from './assets/sidebar/Playstore.svg';
+import iconGoogleMaps from './assets/sidebar/google_review.svg';
+import iconManual from './assets/sidebar/Manual.svg';
 
 interface ChannelItem {
   id: string;
@@ -61,12 +65,10 @@ export default function OmnixEci() {
   ];
 
   const otherChannels: ChannelItem[] = [
-    // { id: 'appstore', name: 'Appstore', icon: '🍎' },
-    // { id: 'mobile', name: 'Mobile', icon: '📱' },
-    // { id: 'playstore', name: 'Playstore', icon: '🤖' },
-    // { id: 'google_review', name: 'Google Rev...', icon: '⭐' },
-    // { id: 'manual', name: 'Manual', badge: 1, icon: '📝', dot: true },
-    // { id: 'video_call', name: 'Video Call', icon: '📹' }
+    { id: 'appstore', name: 'Appstore', icon: iconAppStore },
+    { id: 'playstore', name: 'Playstore', icon: iconPlaystore },
+    { id: 'google_review', name: 'Google Rev...', icon: iconGoogleMaps },
+    { id: 'manual', name: 'Manual', badge: 1, icon: iconManual, dot: true },
   ];
 
   const rtcChannels: ChannelItem[] = [
@@ -550,9 +552,7 @@ export default function OmnixEci() {
                       <button className="border border-slate-200 hover:bg-slate-50 text-xs font-semibold px-3.5 py-2 rounded-lg transition-colors text-slate-700 active:scale-95">
                         Transfer
                       </button>
-                      <button className="border border-slate-200 hover:bg-slate-50 text-xs font-semibold px-3.5 py-2 rounded-lg transition-colors text-slate-700 active:scale-95">
-                        Create As ▾
-                      </button>
+
                       <button className="bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold px-3.5 py-2 rounded-lg transition-all active:scale-95 shadow-sm">
                         End Interaction
                       </button>
@@ -1008,14 +1008,14 @@ export default function OmnixEci() {
                   </div>
 
                   {/* Customer Information Grid Fields */}
-                  <div className="grid grid-cols-5 gap-6 text-[10px] pb-6 border-b border-slate-100 shrink-0">
+                  <div className="grid grid-cols-6 gap-6 text-[10px] pb-6 border-b border-slate-100 shrink-0">
                     <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Customer Code</span>
                         <span className="font-bold text-slate-800 text-[11px] font-mono">{detailCust.CustomerCode}</span>
                       </div>
                       <div>
-                        <span className="text-slate-400 font-semibold block mb-0.5">No. HP</span>
+                        <span className="text-slate-400 font-semibold block mb-0.5">No. Telephone</span>
                         <span className="font-bold text-slate-800 text-[11px]">{detailCust.HPNumber}</span>
                       </div>
                     </div>
@@ -1037,9 +1037,10 @@ export default function OmnixEci() {
                         <span className="font-bold text-slate-800 text-[11px]">{detailCust.JoinDate ? formatIndonesianDate(detailCust.JoinDate) : '-'}</span>
                       </div>
                       <div>
-                        <span className="text-slate-400 font-semibold block mb-0.5">No. Rekening</span>
-                        <span className="font-bold text-slate-800 text-[11px] font-mono">1231312312314124</span>
+                        <span className="text-slate-400 font-semibold block mb-0.5">Status Member</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">Member</span>
                       </div>
+
                     </div>
 
                     <div className="space-y-3">
@@ -1048,16 +1049,23 @@ export default function OmnixEci() {
                         <span className="font-bold text-slate-800 text-[11px] font-mono">1231231</span>
                       </div>
                       <div>
-                        <span className="text-slate-400 font-semibold block mb-0.5">Kota</span>
-                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.CityName || '-'}</span>
+                        <span className="text-slate-400 font-semibold block mb-0.5">No. Rekening</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">1231312312314124</span>
                       </div>
+
                     </div>
 
                     <div className="space-y-3">
                       <div>
+                        <span className="text-slate-400 font-semibold block mb-0.5">Kota</span>
+                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.CityName || '-'}</span>
+                      </div>
+                      <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Provinsi</span>
                         <span className="font-bold text-slate-800 text-[11px]">{detailCust.StateName || '-'}</span>
                       </div>
+                    </div>
+                    <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Alamat Pengiriman</span>
                         <span className="font-bold text-slate-800 text-[11px] leading-tight block">{detailCust.Address || '-'}</span>
@@ -1225,9 +1233,9 @@ export default function OmnixEci() {
                           </div>
 
                           {/* Data Payment Sub-table */}
-                          <div>
+                          <div className='mb-5'>
                             <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">Table Data Payment</h4>
-                            <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm overflow-x-auto">
+                            <div className="border pb-5 border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm overflow-x-auto">
                               <table className="w-full text-left border-collapse min-w-[1200px]">
                                 <thead>
                                   <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider">

@@ -1,118 +1,118 @@
 [
-  {
-    "id": "c1",
-    "avatar": "P",
-    "time": "20/04/2026 14:22:28",
-    "lastMessage": "AI Agent History: User: halow Agent: S...",
-    "source": "p_florencesakura",
-    "handle": "725288490574829",
-    "customerCode": "D000001111",
-    "messages": [
-      {
-        "id": "m1",
+    {
+        "id": "c1",
         "avatar": "P",
-        "text": "Haii, can you help me with my package?",
-        "time": "Apr 20, 14:20",
-        "isSelf": false
-      },
-      {
-        "id": "m2",
-        "sender": "Agent",
-        "avatar": "🤖",
-        "text": "AI Agent History: User: halow Agent: S...",
-        "time": "Apr 20, 14:22",
-        "isSelf": false
-      }
-    ],
-    "journey": [
-      {
-        "id": "j1",
-        "type": "IG Message",
-        "date": "14 Apr 2026 17:02:40",
-        "cases": 1,
-        "tickets": 0,
-        "agent": "tes agent"
-      },
-      {
-        "id": "j2",
-        "type": "IG Message",
-        "date": "02 Apr 2026 17:52:01",
-        "cases": 1,
-        "tickets": 0,
-        "agent": "Agent Demo"
-      },
-      {
-        "id": "j3",
-        "type": "IG Message",
-        "date": "26 Mar 2026 17:32:59",
-        "cases": 1,
-        "tickets": 1,
-        "agent": "Agent Demo"
-      }
-    ]
-  },
-  {
-    "id": "c2",
-    "avatar": "N",
-    "time": "20/04/2026 14:22:28",
-    "lastMessage": "Haii",
-    "source": "p_florencesakura",
-    "handle": "725288490574829",
-    "customerCode": "D000001112",
-    "messages": [
-      {
-        "id": "m3",
+        "time": "20/04/2026 14:22:28",
+        "lastMessage": "AI Agent History: User: halow Agent: S...",
+        "source": "m_fariz",
+        "handle": "725288490574829",
+        "customerCode": "D000001111",
+        "messages": [
+            {
+                "id": "m1",
+                "avatar": "P",
+                "text": "Haii, can you help me with my package?",
+                "time": "Apr 20, 14:20",
+                "isSelf": false
+            },
+            {
+                "id": "m2",
+                "sender": "Agent",
+                "avatar": "🤖",
+                "text": "AI Agent History: User: halow Agent: S...",
+                "time": "Apr 20, 14:22",
+                "isSelf": false
+            }
+        ],
+        "journey": [
+            {
+                "id": "j1",
+                "type": "IG Message",
+                "date": "14 Apr 2026 17:02:40",
+                "cases": 1,
+                "tickets": 0,
+                "agent": "tes agent"
+            },
+            {
+                "id": "j2",
+                "type": "IG Message",
+                "date": "02 Apr 2026 17:52:01",
+                "cases": 1,
+                "tickets": 0,
+                "agent": "Agent Demo"
+            },
+            {
+                "id": "j3",
+                "type": "IG Message",
+                "date": "26 Mar 2026 17:32:59",
+                "cases": 1,
+                "tickets": 1,
+                "agent": "Agent Demo"
+            }
+        ]
+    },
+    {
+        "id": "c2",
         "avatar": "N",
-        "text": "Haii",
-        "time": "Apr 20, 14:22",
-        "isSelf": false
-      }
-    ],
-    "journey": [
-      {
-        "id": "j4",
-        "type": "IG Message",
-        "date": "12 Apr 2026 10:04:12",
-        "cases": 1,
-        "tickets": 0,
-        "agent": "Agent Yola"
-      }
-    ]
-  },
-  {
-    "id": "c3",
-    "avatar": "H",
-    "time": "20/04/2026 14:22:28",
-    "lastMessage": "AI Agent History: User: Hako Agent: Se...",
-    "source": "p_florencesakura",
-    "handle": "hako_sakura",
-    "customerCode": "D000001113",
-    "messages": [
-      {
-        "id": "m4",
+        "time": "20/04/2026 14:22:28",
+        "lastMessage": "Haii",
+        "source": "m_tik",
+        "handle": "725288490574829",
+        "customerCode": "D000001112",
+        "messages": [
+            {
+                "id": "m3",
+                "avatar": "N",
+                "text": "Haii",
+                "time": "Apr 20, 14:22",
+                "isSelf": false
+            }
+        ],
+        "journey": [
+            {
+                "id": "j4",
+                "type": "IG Message",
+                "date": "12 Apr 2026 10:04:12",
+                "cases": 1,
+                "tickets": 0,
+                "agent": "Agent Yola"
+            }
+        ]
+    },
+    {
+        "id": "c3",
         "avatar": "H",
-        "text": "AI Agent History: User: Hako Agent: Se...",
-        "time": "Apr 20, 14:22",
-        "isSelf": false
-      },
-      {
-        "id": "m5",
-        "sender": "Agent Yola",
-        "avatar": "A",
-        "text": "Hello, how can I help you?",
-        "time": "Apr 20, 14:23",
-        "isSelf": true
-      }
-    ],
-    "journey": [
-      {
-        "id": "j5",
-        "type": "IG Message",
-        "date": "18 Mar 2026 15:30:22",
-        "cases": 2,
-        "tickets": 1,
-        "agent": "tes agent"
-      }
-    ]
-  }
+        "time": "20/04/2026 14:22:28",
+        "lastMessage": "AI Agent History: User: Hako Agent: Se...",
+        "source": "al_fariza",
+        "handle": "hako_sakura",
+        "customerCode": "D000001113",
+        "messages": [
+            {
+                "id": "m4",
+                "avatar": "H",
+                "text": "AI Agent History: User: Hako Agent: Se...",
+                "time": "Apr 20, 14:22",
+                "isSelf": false
+            },
+            {
+                "id": "m5",
+                "sender": "Agent Yola",
+                "avatar": "A",
+                "text": "Hello, how can I help you?",
+                "time": "Apr 20, 14:23",
+                "isSelf": true
+            }
+        ],
+        "journey": [
+            {
+                "id": "j5",
+                "type": "IG Message",
+                "date": "18 Mar 2026 15:30:22",
+                "cases": 2,
+                "tickets": 1,
+                "agent": "tes agent"
+            }
+        ]
+    }
 ]
