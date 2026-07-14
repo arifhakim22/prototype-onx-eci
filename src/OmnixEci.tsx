@@ -199,7 +199,7 @@ export default function OmnixEci() {
           <div className="flex flex-col items-center gap-4 w-full">
             {/* Logo block */}
             <div className="w-full h-14 flex items-center justify-center shrink-0 shadow-sm border-b border-[#5a48ce]">
-              <img src="/public/logo.svg" alt="Logo" className="h-8" />
+              <img src="/logo.svg" alt="Logo" className="h-8" />
             </div>
 
             {/* Nav Menu */}
@@ -742,7 +742,7 @@ export default function OmnixEci() {
                           <div className="flex items-center gap-3 text-[11px] text-slate-600 font-medium">
                             <svg xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -960 960 960" width="14px" fill="#94a3b8"><path d="M160-440v80h640v-80H160Zm0-440h640q33 0 56.5 23.5T880-800v440q0 33-23.5 56.5T800-280H640v200l-160-80-160 80v-200H160q-33 0-56.5-23.5T80-360v-440q0-33 23.5-56.5T160-880Zm0 320h640v-240H160v240Zm0 200v-440 440Z" /></svg>
 
-                            <span className="leading-tight">{eciCustomer ? eciCustomer.StatusMembership : '-'}</span>
+                            <span className="leading-tight">{eciCustomer ? eciCustomer.StatusMembership : 'Not Available'}</span>
                           </div>
 
                           {!eciCustomer && (
