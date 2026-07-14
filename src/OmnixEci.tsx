@@ -11,7 +11,7 @@ import sidebarIcon5 from './assets/sidebar/5.svg';
 import iconChat from './assets/sidebar/chat.svg';
 import iconFbMessage from './assets/sidebar/fb_message.svg';
 import iconIgMessage from './assets/sidebar/ig_message.svg';
-import iconTelegram from './assets/sidebar/Telegram.svg';
+// import iconTelegram from './assets/sidebar/Telegram.svg';
 import iconWhatsapp from './assets/sidebar/WhatsApp.svg';
 import iconAppStore from './assets/sidebar/app_store.svg';
 import iconPlaystore from './assets/sidebar/Playstore.svg';
