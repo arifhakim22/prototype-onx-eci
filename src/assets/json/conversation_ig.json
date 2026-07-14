@@ -63,9 +63,9 @@
             {
                 "id": "m3",
                 "avatar": "N",
-                "text": "Haii",
+                "text": "Min jual kulkas 2 pintu, samsung gak?",
                 "time": "Apr 20, 14:22",
-                "isSelf": false
+                "isSelf": true
             }
         ],
         "journey": [
@@ -85,34 +85,36 @@
         "time": "20/04/2026 14:22:28",
         "lastMessage": "AI Agent History: User: Hako Agent: Se...",
         "source": "al_fariza",
-        "handle": "hako_sakura",
+        "handle": "725288490574829",
         "customerCode": "D000001113",
         "messages": [
             {
                 "id": "m4",
                 "avatar": "H",
-                "text": "AI Agent History: User: Hako Agent: Se...",
+                "text": "Min, kalo mau liat TV panasonic yang terbaru, bisa dicabang mana ya?",
                 "time": "Apr 20, 14:22",
-                "isSelf": false
-            },
-            {
-                "id": "m5",
-                "sender": "Agent Yola",
-                "avatar": "A",
-                "text": "Hello, how can I help you?",
-                "time": "Apr 20, 14:23",
                 "isSelf": true
             }
         ],
-        "journey": [
+        "journey": []
+    },
+    {
+        "id": "c4",
+        "avatar": "N",
+        "time": "14/06/2026 08:00:00",
+        "lastMessage": "",
+        "source": "khafintia_01",
+        "handle": "725288490574829",
+        "customerCode": "",
+        "messages": [
             {
-                "id": "j5",
-                "type": "IG Message",
-                "date": "18 Mar 2026 15:30:22",
-                "cases": 2,
-                "tickets": 1,
-                "agent": "tes agent"
+                "id": "m4",
+                "avatar": "N",
+                "text": "Min mau tanya, kemarin istri saya beli TV, tapi kok belum sampai ya?",
+                "time": "Jun 14, 08:00",
+                "isSelf": true
             }
-        ]
+        ],
+        "journey": []
     }
 ]

@@ -541,15 +541,15 @@ export default function OmnixEci() {
                           {activeCustomer ? activeCustomer.CustomerName : 'No Name'}
                         </h3>
                         <div className="flex gap-2 items-center text-[10px] text-slate-400 font-mono mt-1">
-                          <span>IG Handle: {activeConv.handle}</span>
+                          <span>{activeConv.handle}</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <div className="text-right font-mono text-[11px] leading-tight">
+                      <div className="text-right font-mono text-[11px]  flex gap-2">
                         <p className="text-slate-400">Waiting Time: <span className="text-rose-500 font-bold">2037:22:49</span></p>
-                        <p className="text-slate-400 mt-0.5">Handling Time: <span className="text-rose-500 font-bold">00:19</span></p>
+                        <p className="text-slate-400">Handling Time: <span className="text-rose-500 font-bold">00:19</span></p>
                       </div>
 
                       <button className="border border-slate-200 hover:bg-slate-50 text-xs font-semibold px-3.5 py-2 rounded-lg transition-colors text-slate-700 active:scale-95">
@@ -564,7 +564,7 @@ export default function OmnixEci() {
 
                   {/* Chat Messages List */}
                   <div className="flex-1 overflow-y-auto p-6 space-y-4">
-                    <div className="w-full text-center my-3 select-none">
+                    {/* <div className="w-full text-center my-3 select-none">
                       <button className="border border-indigo-200 text-indigo-600 hover:bg-indigo-50/50 text-[10px] font-bold px-3 py-1.5 rounded-lg transition-colors font-mono uppercase tracking-wider">
                         Show previous interaction
                       </button>
@@ -574,13 +574,13 @@ export default function OmnixEci() {
                       <span className="bg-slate-200 text-slate-500 px-3 py-0.5 rounded-full text-[10px] font-bold font-mono tracking-wider">
                         2026-04-20
                       </span>
-                    </div>
+                    </div> */}
 
                     {activeConv.messages.map(msg => (
                       <div key={msg.id} className={`flex gap-3 max-w-[70%] ${!msg.isSelf ? 'ml-auto flex-row-reverse' : ''}`}>
-                        <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold font-mono shrink-0 shadow-sm border border-slate-200">
+                        {/* <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold font-mono shrink-0 shadow-sm border border-slate-200">
                           {msg.avatar}
-                        </div>
+                        </div> */}
                         <div>
                           <div className={`p-3.5 rounded-2xl shadow-sm leading-relaxed text-sm ${!msg.isSelf
                             ? 'bg-[#4F46E5] text-white rounded-tr-none'
@@ -638,11 +638,18 @@ export default function OmnixEci() {
                     {/* Reply Toolbar */}
                     <div className="flex items-center justify-between mt-1">
                       <div className="flex items-center gap-2">
-                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Emoticons">😊</button>
-                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Attach file">📎</button>
-                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Templates">💬</button>
-                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Insert links">🔗</button>
-                        <button className="w-8 h-8 rounded-lg hover:bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm transition-colors font-bold" title="AI Magic Tool">✨</button>
+                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Emoticons">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#525252ff"><path d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm263.5 221.5Q659-337 684-400H276q25 63 80.5 101.5T480-260q68 0 123.5-38.5ZM324-111.5Q251-143 197-197t-85.5-127Q80-397 80-480t31.5-156Q143-709 197-763t127-85.5Q397-880 480-880t156 31.5Q709-817 763-763t85.5 127Q880-563 880-480t-31.5 156Q817-251 763-197t-127 85.5Q563-80 480-80t-156-31.5ZM480-480Zm227 227q93-93 93-227t-93-227q-93-93-227-93t-227 93q-93 93-93 227t93 227q93 93 227 93t227-93Z" /></svg>
+                        </button>
+                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Attach file">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#525252ff"><path d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z" /></svg>
+                        </button>
+                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Templates">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#525252ff"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" /></svg>
+                        </button>
+                        <button className="w-8 h-8 rounded-lg hover:bg-slate-100 flex items-center justify-center text-sm transition-colors" title="Insert links">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#525252ff"><path d="M318-120q-82 0-140-58t-58-140q0-40 15-76t43-64l134-133 56 56-134 134q-17 17-25.5 38.5T200-318q0 49 34.5 83.5T318-200q23 0 45-8.5t39-25.5l133-134 57 57-134 133q-28 28-64 43t-76 15Zm79-220-57-57 223-223 57 57-223 223Zm251-28-56-57 134-133q17-17 25-38t8-44q0-50-34-85t-84-35q-23 0-44.5 8.5T558-726L425-592l-57-56 134-134q28-28 64-43t76-15q82 0 139.5 58T839-641q0 39-14.5 75T782-502L648-368Z" /></svg>
+                        </button>
                       </div>
 
                       <div className="flex items-center gap-2">
@@ -674,22 +681,22 @@ export default function OmnixEci() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center font-bold text-sm select-none">
-                        {activeCustomer ? activeCustomer.CustomerName.charAt(0).toUpperCase() : ''}
+                        {activeCustomer ? activeCustomer.CustomerName.charAt(0).toUpperCase() : 'N'}
                       </div>
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-slate-900 leading-none tracking-wide">{activeCustomer ? activeCustomer.CustomerName.toUpperCase() : ''}</h4>
+                        <h4 className="text-sm font-bold text-slate-900 leading-none tracking-wide">{activeCustomer ? activeCustomer.CustomerName.toUpperCase() : 'NO NAME'}</h4>
                         <div className="space-y-1.5 pt-1">
                           <div className="flex items-center gap-2 text-xs text-slate-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3.5 h-3.5 text-slate-400">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a20.373 20.373 0 01-6.708-7.77c-.136-.387.05-1.07.418-1.385l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                             </svg>
-                            <span className="font-medium text-[11px]">{activeCustomer ? activeCustomer.HPNumber : ''}</span>
+                            <span className="font-medium text-[11px]">{activeCustomer ? activeCustomer.HPNumber : 'Not Available'}</span>
                           </div>
                           <div className="flex items-center gap-2 text-xs text-slate-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3.5 h-3.5 text-slate-400">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
                             </svg>
-                            <span className="font-medium text-[11px]">{activeCustomer ? activeCustomer.Email : ''}</span>
+                            <span className="font-medium text-[11px]">{activeCustomer ? activeCustomer.Email : 'Not Available'}</span>
                           </div>
                         </div>
                       </div>
@@ -702,7 +709,7 @@ export default function OmnixEci() {
 
                     <div className="flex gap-3">
                       <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center font-bold text-sm shrink-0 select-none mt-0.5">
-                        {displayNameEci ? displayNameEci.charAt(0).toUpperCase() : ''}
+                        {displayNameEci ? displayNameEci.charAt(0).toUpperCase() : 'N'}
                       </div>
                       <div className="flex-1 space-y-2">
                         <h4 className="text-sm font-bold text-slate-900 leading-none tracking-wide">{displayNameEci || 'No Name'}</h4>
@@ -712,21 +719,21 @@ export default function OmnixEci() {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 text-slate-400 shrink-0">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a20.373 20.373 0 01-6.708-7.77c-.136-.387.05-1.07.418-1.385l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                             </svg>
-                            <span>{eciCustomer ? eciCustomer.HPNumber : ''}</span>
+                            <span>{eciCustomer ? eciCustomer.HPNumber : 'Not Available'}</span>
                           </div>
 
                           <div className="flex items-center gap-3 text-[11px] text-slate-600 font-medium">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 text-slate-400 shrink-0">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
                             </svg>
-                            <span>{eciCustomer ? eciCustomer.Email : ''}</span>
+                            <span>{eciCustomer ? eciCustomer.Email : 'Not Available'}</span>
                           </div>
 
                           <div className="flex items-center gap-3 text-[11px] text-slate-600 font-medium">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 text-slate-400 shrink-0">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                             </svg>
-                            <span>{eciCustomer ? (eciCustomer.SexName === 'MALE' ? 'Laki-Laki' : 'Perempuan') : ''}</span>
+                            <span>{eciCustomer ? (eciCustomer.SexName === 'MALE' ? 'Laki-Laki' : 'Perempuan') : 'Not Available'}</span>
                           </div>
 
                           <div className="flex items-center gap-3 text-[11px] text-slate-600 font-medium">
@@ -734,7 +741,7 @@ export default function OmnixEci() {
                               <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25a7.5 7.5 0 1115 0z" />
                             </svg>
-                            <span className="leading-tight">{eciCustomer ? eciCustomer.Address : ''}</span>
+                            <span className="leading-tight">{eciCustomer ? eciCustomer.Address : 'Not Available'}</span>
                           </div>
                         </div>
                       </div>
@@ -800,42 +807,9 @@ export default function OmnixEci() {
 
                       {/* Scrollable Timeline */}
                       <div className="flex-1 overflow-y-auto space-y-3.5 pr-0.5">
-                        {activeJourneyTab === 'journey' ? (
-                          activeConv.journey.map((item, idx) => (
-                            <div key={item.id} className="relative pl-6 pb-1">
-                              {/* Dot/Line connector */}
-                              <div className="absolute left-1.5 top-1.5 w-3 h-3 bg-amber-500 rounded-full flex items-center justify-center text-[7px] text-white font-bold shadow-sm z-10">
-                                🎧
-                              </div>
-                              {idx !== activeConv.journey.length - 1 && (
-                                <div className="absolute left-[11px] top-4 bottom-0 w-0.5 bg-slate-200" />
-                              )}
-
-                              <div className="p-3 border border-slate-200/80 rounded-xl bg-slate-50/50 hover:bg-slate-50 transition-colors shadow-sm">
-                                <div className="flex justify-between items-center mb-1.5">
-                                  <span className="text-[11px] font-bold text-slate-800 flex items-center gap-1">
-                                    📸 {item.type}
-                                  </span>
-                                  <span className="text-[9px] text-slate-400 font-mono font-medium">{item.date.split(' ').slice(0, 2).join(' ')}</span>
-                                </div>
-
-                                <div className="text-[10px] text-slate-500 leading-relaxed space-y-0.5">
-                                  <p>Total Case : <span className="font-bold text-slate-800">{item.cases} Case</span></p>
-                                  <p>Total Ticket : <span className="font-bold text-slate-800">{item.tickets} Case</span></p>
-                                  <p>Agent Name : <span className="font-bold text-slate-800">{item.agent}</span></p>
-                                </div>
-
-                                <button className="mt-2.5 w-full border border-slate-200 hover:bg-slate-50 text-[10px] font-bold py-1.5 rounded-lg transition-colors text-slate-700 active:scale-[0.98]">
-                                  Detail
-                                </button>
-                              </div>
-                            </div>
-                          ))
-                        ) : (
-                          <div className="text-center text-xs text-slate-400 py-12 italic">
-                            No journey ticket data found.
-                          </div>
-                        )}
+                        <div className="text-center text-xs text-slate-400 py-12 italic">
+                          No journey ticket data found.
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -984,14 +958,18 @@ export default function OmnixEci() {
 
             {/* Modal Body */}
             {(() => {
-              const detailCust = customerData.find(c => c.CustomerCode === detailCustomerCode) || null;
-              if (!detailCust) {
-                return (
-                  <div className="p-12 text-center text-slate-400 italic text-sm">
-                    No customer details found for code: {detailCustomerCode}
-                  </div>
-                );
-              }
+              const detailCust = customerData.find(c => c.CustomerCode === detailCustomerCode) || {
+                CustomerName: 'No Name',
+                CustomerCode: 'not available',
+                HPNumber: 'not available',
+                SexName: 'not available',
+                DateOfBirth: null,
+                JoinDate: null,
+                CityName: 'not available',
+                StateName: 'not available',
+                Address: 'not available',
+                Email: 'not available'
+              };
 
               const custTransactions = transactionData.filter((t: any) => t.CustomerCode === detailCustomerCode);
               const custPayments = paymentData.filter((p: any) => p.CustomerCode === detailCustomerCode);
@@ -1002,11 +980,11 @@ export default function OmnixEci() {
                   {/* Top Customer Brief Info */}
                   <div className="flex items-start gap-4 pb-4 border-b border-slate-100 shrink-0">
                     <div className="w-12 h-12 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center font-bold text-base select-none mt-0.5 shrink-0">
-                      {detailCust.CustomerName.charAt(0).toUpperCase()}
+                      {detailCust.CustomerName ? detailCust.CustomerName.charAt(0).toUpperCase() : 'N'}
                     </div>
                     <div className="flex-1">
                       <h3 className="text-sm font-bold text-slate-800 leading-tight tracking-wide">{detailCust.CustomerName}</h3>
-                      <p className="text-[10px] text-slate-400 mt-0.5">{detailCust.Email || '-'}</p>
+                      <p className="text-[10px] text-slate-400 mt-0.5">{detailCust.Email || 'not available'}</p>
                     </div>
                   </div>
 
@@ -1026,22 +1004,26 @@ export default function OmnixEci() {
                     <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Gender</span>
-                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.SexName === 'MALE' ? 'Laki-Laki' : 'Perempuan'}</span>
+                        <span className="font-bold text-slate-800 text-[11px]">
+                          {detailCust.SexName === 'not available'
+                            ? 'not available'
+                            : (detailCust.SexName === 'MALE' ? 'Laki-Laki' : 'Perempuan')}
+                        </span>
                       </div>
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Date Birth</span>
-                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.DateOfBirth ? detailCust.DateOfBirth.split('-').reverse().join('/') : '-'}</span>
+                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.DateOfBirth ? detailCust.DateOfBirth.split('-').reverse().join('/') : 'not available'}</span>
                       </div>
                     </div>
 
                     <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Member Activation Date</span>
-                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.JoinDate ? formatIndonesianDate(detailCust.JoinDate) : '-'}</span>
+                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.JoinDate ? formatIndonesianDate(detailCust.JoinDate) : 'not available'}</span>
                       </div>
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Status Member</span>
-                        <span className="font-bold text-slate-800 text-[11px] font-mono">Member</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">{detailCust.CustomerCode === 'not available' ? 'not available' : 'Member'}</span>
                       </div>
 
                     </div>
@@ -1049,11 +1031,11 @@ export default function OmnixEci() {
                     <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Agent Code</span>
-                        <span className="font-bold text-slate-800 text-[11px] font-mono">1231231</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">{detailCust.CustomerCode === 'not available' ? 'not available' : '1231231'}</span>
                       </div>
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">No. Rekening</span>
-                        <span className="font-bold text-slate-800 text-[11px] font-mono">1231312312314124</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">{detailCust.CustomerCode === 'not available' ? 'not available' : '1231312312314124'}</span>
                       </div>
 
                     </div>
@@ -1061,17 +1043,17 @@ export default function OmnixEci() {
                     <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Kota</span>
-                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.CityName || '-'}</span>
+                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.CityName || 'not available'}</span>
                       </div>
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Provinsi</span>
-                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.StateName || '-'}</span>
+                        <span className="font-bold text-slate-800 text-[11px]">{detailCust.StateName || 'not available'}</span>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Alamat Pengiriman</span>
-                        <span className="font-bold text-slate-800 text-[11px] leading-tight block">{detailCust.Address || '-'}</span>
+                        <span className="font-bold text-slate-800 text-[11px] leading-tight block">{detailCust.Address || 'not available'}</span>
                       </div>
                     </div>
                   </div>
