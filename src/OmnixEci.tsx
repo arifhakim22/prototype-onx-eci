@@ -707,6 +707,18 @@ export default function OmnixEci() {
                   <div className="p-5 border-b border-slate-200 shrink-0">
                     <h3 className="text-[13px] font-bold text-slate-700 tracking-tight mb-4">Customer Information ECI</h3>
 
+                    {!eciCustomer && (
+                      <div className="mb-4 flex items-start gap-2.5 p-3.5 bg-amber-50 border border-amber-200/80 rounded-xl text-amber-800 text-[11px] font-semibold leading-relaxed">
+                        <svg className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <div>
+                          <p className="font-bold text-amber-900 mb-0.5">Peringatan</p>
+                          <p>Data customer tidak ditemukan pada sistem.</p>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="flex gap-3">
                       <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center font-bold text-sm shrink-0 select-none mt-0.5">
                         {displayNameEci ? displayNameEci.charAt(0).toUpperCase() : 'N'}
