@@ -198,13 +198,8 @@ export default function OmnixEci() {
         <nav className="w-[60px] p-2 bg-[#3B2F9F] flex flex-col justify-between items-center py-0 shrink-0 z-20 select-none">
           <div className="flex flex-col items-center gap-4 w-full">
             {/* Logo block */}
-            <div className="w-full h-14 bg-[#6F5CE6] flex items-center justify-center shrink-0 shadow-sm border-b border-[#5a48ce]">
-              <svg viewBox="0 0 100 100" className="w-9 h-9 text-white animate-pulse" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round">
-                <line x1="25" y1="25" x2="75" y2="75" />
-                <line x1="75" y1="25" x2="25" y2="75" />
-                <line x1="72" y1="26" x2="88" y2="10" stroke="white" strokeWidth="4" />
-                <polyline points="78,10 88,10 88,20" stroke="white" strokeWidth="4" />
-              </svg>
+            <div className="w-full h-14 flex items-center justify-center shrink-0 shadow-sm border-b border-[#5a48ce]">
+              <img src="/public/logo.svg" alt="Logo" className="h-8" />
             </div>
 
             {/* Nav Menu */}
@@ -707,18 +702,6 @@ export default function OmnixEci() {
                   <div className="p-5 border-b border-slate-200 shrink-0">
                     <h3 className="text-[13px] font-bold text-slate-700 tracking-tight mb-4">Customer Information ECI</h3>
 
-                    {!eciCustomer && (
-                      <div className="mb-4 flex items-start gap-2.5 p-3.5 bg-amber-50 border border-amber-200/80 rounded-xl text-amber-800 text-[11px] font-semibold leading-relaxed">
-                        <svg className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                        </svg>
-                        <div>
-                          <p className="font-bold text-amber-900 mb-0.5">Peringatan</p>
-                          <p>Data customer tidak ditemukan pada sistem.</p>
-                        </div>
-                      </div>
-                    )}
-
                     <div className="flex gap-3">
                       <div className="w-11 h-11 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center font-bold text-sm shrink-0 select-none mt-0.5">
                         {displayNameEci ? displayNameEci.charAt(0).toUpperCase() : 'N'}
@@ -755,9 +738,29 @@ export default function OmnixEci() {
                             </svg>
                             <span className="leading-tight">{eciCustomer ? eciCustomer.Address : 'Not Available'}</span>
                           </div>
+
+                          <div className="flex items-center gap-3 text-[11px] text-slate-600 font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -960 960 960" width="14px" fill="#94a3b8"><path d="M160-440v80h640v-80H160Zm0-440h640q33 0 56.5 23.5T880-800v440q0 33-23.5 56.5T800-280H640v200l-160-80-160 80v-200H160q-33 0-56.5-23.5T80-360v-440q0-33 23.5-56.5T160-880Zm0 320h640v-240H160v240Zm0 200v-440 440Z" /></svg>
+
+                            <span className="leading-tight">{eciCustomer ? eciCustomer.StatusMembership : '-'}</span>
+                          </div>
+
+                          {!eciCustomer && (
+                            <div className="mt-4 flex items-start gap-2.5 p-3.5 bg-amber-50 border border-amber-200/80 rounded-xl text-amber-800 text-[11px] font-semibold leading-relaxed">
+                              <svg className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                              </svg>
+                              <div>
+                                <p>Data customer tidak ditemukan pada sistem.</p>
+                              </div>
+                            </div>
+                          )}
+
                         </div>
                       </div>
                     </div>
+
+
 
                     {/* Bottom Row inside card */}
                     <div className="flex items-center justify-between mt-5 pt-3">

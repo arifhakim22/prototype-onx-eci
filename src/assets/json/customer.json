@@ -9,7 +9,8 @@
         "Address": "Jl. Tinombala No.16",
         "CityName": "KOTA BEKASI",
         "StateName": "JAWA BARAT",
-        "JoinDate": "2022-06-20"
+        "JoinDate": "2022-06-20",
+        "StatusMembership": "Member"
     },
     {
         "CustomerCode": "D000001112",
@@ -21,7 +22,8 @@
         "Address": "Jl. Raya Keadilan No. 31",
         "CityName": null,
         "StateName": "DKI JAKARTA",
-        "JoinDate": "2022-06-01"
+        "JoinDate": "2022-06-01",
+        "StatusMembership": "Member"
     },
     {
         "CustomerCode": "D000001113",
@@ -33,6 +35,7 @@
         "Address": "Jl. Raya Kadudampit",
         "CityName": "SUKABUMI",
         "StateName": "JAWA BARAT",
-        "JoinDate": "2017-12-18"
+        "JoinDate": "2017-12-18",
+        "StatusMembership": "Non Member"
     }
 ]
