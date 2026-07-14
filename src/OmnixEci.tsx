@@ -8,6 +8,10 @@ import sidebarIcon2 from './assets/sidebar/2.svg';
 import sidebarIcon3 from './assets/sidebar/3.svg';
 import sidebarIcon4 from './assets/sidebar/4.svg';
 import sidebarIcon5 from './assets/sidebar/5.svg';
+import iconChat from './assets/sidebar/chat.svg';
+import iconFbMessage from './assets/sidebar/fb_message.svg';
+import iconIgMessage from './assets/sidebar/ig_message.svg';
+import iconTelegram from './assets/sidebar/Telegram.svg';
 
 interface ChannelItem {
   id: string;
@@ -53,7 +57,7 @@ export default function OmnixEci() {
 
   // Channels configuration matching the image
   const voiceChannels: ChannelItem[] = [
-    { id: 'voice_ami', name: 'Voice ami', badge: 1, icon: '📞', dot: true }
+    // { id: 'voice_ami', name: 'Voice ami', badge: 1, icon: '📞', dot: true }
   ];
 
   const otherChannels: ChannelItem[] = [
@@ -66,14 +70,10 @@ export default function OmnixEci() {
   ];
 
   const rtcChannels: ChannelItem[] = [
-    { id: 'chat', name: 'Chat', badge: 71, icon: '💬' },
-    { id: 'fb_message', name: 'FB Message', badge: 11, icon: '🔵' },
-    { id: 'ig_message', name: 'IG Message', badge: 7, icon: '📸' },
-    { id: 'telegram', name: 'Telegram', badge: 9, icon: '✈️' },
-    { id: 'tokopedia', name: 'Tokopedia', badge: 5, icon: '🟢' },
-    { id: 'tw_message', name: 'TW Message', icon: '🐦' },
-    { id: 'whatsapp', name: 'Whatsapp', badge: '99+', icon: '🟢' },
-    { id: 'tiktok_message', name: 'Tiktok Mes...', badge: 3, icon: '🎵' }
+    { id: 'chat', name: 'Chat', badge: 0, icon: iconChat },
+    { id: 'fb_message', name: 'FB Message', badge: 0, icon: iconFbMessage },
+    { id: 'ig_message', name: 'IG Message', badge: 3, icon: iconIgMessage },
+    { id: 'telegram', name: 'Telegram', badge: 0, icon: iconTelegram }
   ];
 
   const socialChannels: ChannelItem[] = [
@@ -89,7 +89,7 @@ export default function OmnixEci() {
     ig_message: conversationsData as Conversation[]
   });
 
-  const [activeConvId, setActiveConvId] = useState<string>('c1');
+  const [activeConvId, setActiveConvId] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalSearchQuery, setModalSearchQuery] = useState<string>('');
   const [eciCustomerOverrides, setEciCustomerOverrides] = useState<Record<string, string>>({});
@@ -190,7 +190,7 @@ export default function OmnixEci() {
       <div className="flex-1 flex overflow-hidden">
 
         {/* 2. VERTICAL NARROW NAVIGATION BAR */}
-        <nav className="w-[70px] bg-[#3B2F9F] flex flex-col justify-between items-center py-0 shrink-0 z-20 select-none">
+        <nav className="w-[60px] p-2 bg-[#3B2F9F] flex flex-col justify-between items-center py-0 shrink-0 z-20 select-none">
           <div className="flex flex-col items-center gap-4 w-full">
             {/* Logo block */}
             <div className="w-full h-14 bg-[#6F5CE6] flex items-center justify-center shrink-0 shadow-sm border-b border-[#5a48ce]">
@@ -328,7 +328,7 @@ export default function OmnixEci() {
                           }`}
                       >
                         <div className="flex items-center gap-2">
-                          <span>{c.icon}</span>
+                          {c.icon.startsWith('data:') || c.icon.startsWith('/') ? <img src={c.icon} className="w-4 h-4" alt={c.name} /> : <span>{c.icon}</span>}
                           <span>{c.name}</span>
                           {c.dot && <span className="w-1.5 h-1.5 rounded-full bg-green-500" />}
                         </div>
@@ -354,7 +354,7 @@ export default function OmnixEci() {
                           }`}
                       >
                         <div className="flex items-center gap-2">
-                          <span>{c.icon}</span>
+                          {c.icon.startsWith('data:') || c.icon.startsWith('/') ? <img src={c.icon} className="w-4 h-4" alt={c.name} /> : <span>{c.icon}</span>}
                           <span>{c.name}</span>
                           {c.dot && <span className="w-1.5 h-1.5 rounded-full bg-green-500" />}
                         </div>
@@ -385,7 +385,7 @@ export default function OmnixEci() {
                           }`}
                       >
                         <div className="flex items-center gap-2">
-                          <span>{c.icon}</span>
+                          {c.icon.startsWith('data:') || c.icon.startsWith('/') ? <img src={c.icon} className="w-4 h-4" alt={c.name} /> : <span>{c.icon}</span>}
                           <span>{c.name}</span>
                           {c.dot && <span className="w-1.5 h-1.5 rounded-full bg-green-500" />}
                         </div>
@@ -411,7 +411,7 @@ export default function OmnixEci() {
                           }`}
                       >
                         <div className="flex items-center gap-2">
-                          <span>{c.icon}</span>
+                          {c.icon.startsWith('data:') || c.icon.startsWith('/') ? <img src={c.icon} className="w-4 h-4" alt={c.name} /> : <span>{c.icon}</span>}
                           <span>{c.name}</span>
                           {c.dot && <span className="w-1.5 h-1.5 rounded-full bg-green-500" />}
                         </div>
@@ -462,9 +462,9 @@ export default function OmnixEci() {
                 {/* Instruction line */}
                 <div className="flex items-center justify-between text-[10px] text-slate-400 mt-3">
                   <span>Click arrow button to have a conversation</span>
-                  <button className="w-5 h-5 bg-[#4F46E5] text-white rounded-full flex items-center justify-center text-xs hover:bg-[#4338CA] transition-colors shadow-sm">
+                  {/* <button className="w-5 h-5 bg-[#4F46E5] text-white rounded-full flex items-center justify-center text-xs hover:bg-[#4338CA] transition-colors shadow-sm">
                     ↗
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
@@ -484,25 +484,32 @@ export default function OmnixEci() {
                         : 'border-slate-100 hover:border-slate-200 hover:bg-slate-50'
                         }`}
                     >
-                      <div className="flex items-center justify-between mb-1.5">
-                        <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-[10px] font-bold font-mono">
+                      <div className="flex items-start gap-3">
+                        {/* Avatar with dynamic channel overlay */}
+                        <div className="relative shrink-0 select-none">
+                          <div className="w-9 h-9 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center text-sm font-bold font-mono">
                             {conv.avatar}
                           </div>
-                          <span className="text-xs font-bold text-slate-900">
-                            {customerData.find(cust => cust.CustomerCode === conv.customerCode)?.CustomerName || 'No Name'}
-                          </span>
+                          <div className="absolute -bottom-1 -right-1 w-4.5 h-4.5 rounded-full overflow-hidden border border-white">
+                            <img src={iconIgMessage} className="w-full h-full object-cover" alt="channel icon" />
+                          </div>
                         </div>
-                        <span className="text-[9px] text-slate-400 font-medium">{conv.time.split(' ')[0]}</span>
-                      </div>
 
-                      <p className="text-[11px] text-slate-500 truncate leading-snug">
-                        {conv.lastMessage}
-                      </p>
-
-                      <div className="flex items-center gap-1.5 text-[9px] text-slate-400 mt-2 font-mono">
-                        <span className="bg-slate-100 px-1.5 py-0.5 rounded text-slate-500 font-semibold font-sans">Source</span>
-                        <span className="truncate">{conv.source}</span>
+                        {/* Text info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between mb-0.5 gap-2">
+                            <span className="text-xs font-bold text-slate-700 truncate">
+                              {customerData.find(cust => cust.CustomerCode === conv.customerCode)?.CustomerName || 'No Name'}
+                            </span>
+                            <span className="text-[9px] text-slate-400 font-semibold whitespace-nowrap">{conv.time}</span>
+                          </div>
+                          <p className="text-[10px] text-slate-400 truncate leading-snug">
+                            {conv.lastMessage}
+                          </p>
+                          <div className="text-[9px] text-slate-400 mt-1 select-none font-semibold">
+                            Source : <span className="text-slate-500 font-bold">{conv.source}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))
