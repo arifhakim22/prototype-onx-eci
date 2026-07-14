@@ -12,10 +12,14 @@ import iconChat from './assets/sidebar/chat.svg';
 import iconFbMessage from './assets/sidebar/fb_message.svg';
 import iconIgMessage from './assets/sidebar/ig_message.svg';
 import iconTelegram from './assets/sidebar/Telegram.svg';
+import iconWhatsapp from './assets/sidebar/WhatsApp.svg';
 import iconAppStore from './assets/sidebar/app_store.svg';
 import iconPlaystore from './assets/sidebar/Playstore.svg';
 import iconGoogleMaps from './assets/sidebar/google_review.svg';
 import iconManual from './assets/sidebar/Manual.svg';
+import emailIcon from './assets/sidebar/Email.svg';
+import fbCommentIcon from './assets/sidebar/Facebook.svg';
+import igCommentIcon from './assets/sidebar/ig_message.svg';
 
 interface ChannelItem {
   id: string;
@@ -65,23 +69,23 @@ export default function OmnixEci() {
   ];
 
   const otherChannels: ChannelItem[] = [
-    { id: 'appstore', name: 'Appstore', icon: iconAppStore },
-    { id: 'playstore', name: 'Playstore', icon: iconPlaystore },
-    { id: 'google_review', name: 'Google Rev...', icon: iconGoogleMaps },
-    { id: 'manual', name: 'Manual', badge: 1, icon: iconManual, dot: true },
+    { id: 'appstore', name: 'Appstore', badge: 0, icon: iconAppStore },
+    { id: 'playstore', name: 'Playstore', badge: 0, icon: iconPlaystore },
+    { id: 'google_review', name: 'Google Rev...', badge: 0, icon: iconGoogleMaps },
+    { id: 'manual', name: 'Manual', badge: 0, icon: iconManual, dot: true },
   ];
 
   const rtcChannels: ChannelItem[] = [
     { id: 'chat', name: 'Chat', badge: 0, icon: iconChat },
     { id: 'fb_message', name: 'FB Message', badge: 0, icon: iconFbMessage },
     { id: 'ig_message', name: 'IG Message', badge: 3, icon: iconIgMessage },
-    { id: 'telegram', name: 'Telegram', badge: 0, icon: iconTelegram }
+    { id: 'whatsapp', name: 'Whatsapp', badge: 0, icon: iconWhatsapp }
   ];
 
   const socialChannels: ChannelItem[] = [
-    // { id: 'email', name: 'Email', badge: '99+', icon: '✉️' },
-    // { id: 'fb_comment', name: 'FB Comment', badge: 41, icon: '💬' },
-    // { id: 'ig_comment', name: 'IG Comment', badge: 16, icon: '💬' },
+    { id: 'email', name: 'Email', badge: 0, icon: emailIcon },
+    { id: 'fb_comment', name: 'FB Comment', badge: 0, icon: fbCommentIcon },
+    { id: 'ig_comment', name: 'IG Comment', badge: 0, icon: igCommentIcon }
     // { id: 'tiktok_comment', name: 'Tiktok Com...', icon: '💬' },
     // { id: 'tw_comment', name: 'TW Comment', icon: '💬' }
   ];
