@@ -125,9 +125,9 @@ export default function OmnixEci() {
 
   const getSenderName = (msg: any) => {
     if (msg.isSelf) {
-      return msg.sender || 'Agent Yola';
+      return msg.sender || (activeCustomer ? activeCustomer.CustomerName : 'Customer');
     }
-    return msg.sender || (activeCustomer ? activeCustomer.CustomerName : 'Customer');
+    return msg.sender || 'Agent Yola';
   };
 
   const formatIndonesianDate = (dateStr: string | null) => {
@@ -155,7 +155,7 @@ export default function OmnixEci() {
       avatar: 'A',
       text: replyText,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      isSelf: true
+      isSelf: false
     };
 
     setConversations(prev => {
@@ -577,19 +577,19 @@ export default function OmnixEci() {
                     </div>
 
                     {activeConv.messages.map(msg => (
-                      <div key={msg.id} className={`flex gap-3 max-w-[70%] ${msg.isSelf ? 'ml-auto flex-row-reverse' : ''}`}>
+                      <div key={msg.id} className={`flex gap-3 max-w-[70%] ${!msg.isSelf ? 'ml-auto flex-row-reverse' : ''}`}>
                         <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs font-bold font-mono shrink-0 shadow-sm border border-slate-200">
                           {msg.avatar}
                         </div>
                         <div>
-                          <div className={`p-3.5 rounded-2xl shadow-sm leading-relaxed text-sm ${msg.isSelf
+                          <div className={`p-3.5 rounded-2xl shadow-sm leading-relaxed text-sm ${!msg.isSelf
                             ? 'bg-[#4F46E5] text-white rounded-tr-none'
                             : 'bg-white text-slate-800 border border-slate-200/80 rounded-tl-none'
                             }`}>
                             <p className="font-bold text-[10px] opacity-75 mb-0.5">{getSenderName(msg)}</p>
                             <p>{msg.text}</p>
                           </div>
-                          <span className={`text-[9px] text-slate-400 font-mono mt-1 block ${msg.isSelf ? 'text-right' : ''}`}>
+                          <span className={`text-[9px] text-slate-400 font-mono mt-1 block ${!msg.isSelf ? 'text-right' : ''}`}>
                             {msg.time}
                           </span>
                         </div>

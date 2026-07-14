@@ -10,17 +10,17 @@
         "messages": [
             {
                 "id": "m1",
-                "avatar": "P",
-                "text": "Haii, can you help me with my package?",
-                "time": "Apr 20, 14:20",
-                "isSelf": false
+                "avatar": "F",
+                "text": "Halo, saya mau tanya tentang rice cooker yang kemarin saya beli",
+                "time": "Jul 14, 14:20",
+                "isSelf": true
             },
             {
                 "id": "m2",
-                "sender": "Agent",
-                "avatar": "🤖",
-                "text": "AI Agent History: User: halow Agent: S...",
-                "time": "Apr 20, 14:22",
+                "sender": "Agent 1",
+                "avatar": "A",
+                "text": "Halo, boleh diinformasikan nomor invoice nya?",
+                "time": "Jul 15, 14:22",
                 "isSelf": false
             }
         ],
