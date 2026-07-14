@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body, button, input, textarea, select {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Force borders to render on dynamic HTML tables inside report-html-output */
+.report-html-output table[border="1"],
+.report-html-output table[border="1"] th,
+.report-html-output table[border="1"] td {
+  border: 1px solid #d1d5db !important; /* border-gray-300 */
+}
+
+.report-html-output table[border="1"] {
+  border-collapse: collapse !important;
+}
+
+.report-html-output table th,
+.report-html-output table td {
+  padding: 8px 12px;
+}

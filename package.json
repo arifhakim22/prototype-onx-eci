@@ -1,0 +1,39 @@
+{
+  "name": "mini_engine",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"npm run server\" \"npm run server:eng\"",
+    "server": "tsx server.ts",
+    "server:eng": "tsx server_oltest_2.ts",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "convert": "node src/assets/json/convert.js"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "pg": "^8.22.0",
+    "puppeteer-core": "^24.43.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.2",
+    "@types/pg": "^8.20.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.3",
+    "oxlint": "^1.71.0",
+    "tsx": "^4.22.5",
+    "typescript": "~6.0.2",
+    "vite": "^6.0.0"
+  }
+}

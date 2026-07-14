@@ -1,0 +1,38 @@
+[
+    {
+        "CustomerCode": "D000001111",
+        "CustomerName": "MSFARIZ",
+        "HPNumber": "628111181088",
+        "Email": "msfariz@outlook.com",
+        "SexName": "MALE",
+        "DateOfBirth": "1992-08-27",
+        "Address": "Jl. Tinombala No.16",
+        "CityName": "KOTA BEKASI",
+        "StateName": "JAWA BARAT",
+        "JoinDate": "2022-06-20"
+    },
+    {
+        "CustomerCode": "D000001112",
+        "CustomerName": "MITIK",
+        "HPNumber": "628100000000",
+        "Email": "mitik@noemail.com",
+        "SexName": "MALE",
+        "DateOfBirth": "1975-12-15",
+        "Address": "Jl. Raya Keadilan No. 31",
+        "CityName": null,
+        "StateName": "DKI JAKARTA",
+        "JoinDate": "2022-06-01"
+    },
+    {
+        "CustomerCode": "D000001113",
+        "CustomerName": "ALFARIZA",
+        "HPNumber": "628566001858",
+        "Email": "fariz@noemail.com",
+        "SexName": "MALE",
+        "DateOfBirth": "2005-05-20",
+        "Address": "Jl. Raya Kadudampit",
+        "CityName": "SUKABUMI",
+        "StateName": "JAWA BARAT",
+        "JoinDate": "2017-12-18"
+    }
+]
