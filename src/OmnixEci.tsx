@@ -1049,8 +1049,8 @@ export default function OmnixEci() {
                         <span className="font-bold text-slate-800 text-[11px] font-mono">{detailCust.CustomerCode === 'not available' ? 'not available' : '1231231'}</span>
                       </div>
                       <div>
-                        <span className="text-slate-400 font-semibold block mb-0.5">No. Rekening</span>
-                        <span className="font-bold text-slate-800 text-[11px] font-mono">{detailCust.CustomerCode === 'not available' ? 'not available' : '1231312312314124'}</span>
+                        <span className="text-slate-400 font-semibold block mb-0.5">Balance Point</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">60</span>
                       </div>
 
                     </div>
@@ -1067,7 +1067,7 @@ export default function OmnixEci() {
                     </div>
                     <div className="space-y-3">
                       <div>
-                        <span className="text-slate-400 font-semibold block mb-0.5">Alamat Pengiriman</span>
+                        <span className="text-slate-400 font-semibold block mb-0.5">Alamat Domisili</span>
                         <span className="font-bold text-slate-800 text-[11px] leading-tight block">{detailCust.Address || 'not available'}</span>
                       </div>
                     </div>
@@ -1089,13 +1089,13 @@ export default function OmnixEci() {
                     >
                       Data Point E-Cityzen
                     </button>
-                    <button
+                    {/* <button
                       onClick={() => setActiveDetailTab('work_order')}
                       className={`pb-2 px-5 font-bold border-b-2 transition-all duration-150 ${activeDetailTab === 'work_order' ? 'border-[#4F46E5] text-[#4F46E5]' : 'border-transparent text-slate-400 hover:text-slate-600'
                         }`}
                     >
                       Data Work Order Pemasangan via GKT
-                    </button>
+                    </button> */}
                     <button
                       onClick={() => setActiveDetailTab('delivery_order')}
                       className={`pb-2 px-5 font-bold border-b-2 transition-all duration-150 ${activeDetailTab === 'delivery_order' ? 'border-[#4F46E5] text-[#4F46E5]' : 'border-transparent text-slate-400 hover:text-slate-600'
@@ -1242,16 +1242,16 @@ export default function OmnixEci() {
                                     <th className="px-4 py-2.5">POS Invoice</th>
                                     <th className="px-4 py-2.5">Payment Date</th>
                                     <th className="px-4 py-2.5 text-right">Payment Amount</th>
-                                    <th className="px-4 py-2.5">Card No</th>
+                                    {/* <th className="px-4 py-2.5">Card No</th>
                                     <th className="px-4 py-2.5">Card Name</th>
                                     <th className="px-4 py-2.5">Card Holder</th>
                                     <th className="px-4 py-2.5">Card Type</th>
                                     <th className="px-4 py-2.5">EDC Code</th>
-                                    <th className="px-4 py-2.5">EDC Name</th>
+                                    <th className="px-4 py-2.5">EDC Name</th> */}
                                     <th className="px-4 py-2.5">Tender Type</th>
                                     <th className="px-4 py-2.5">Tender Name</th>
                                     <th className="px-4 py-2.5">TRN Type</th>
-                                    <th className="px-4 py-2.5">Approval Code</th>
+                                    {/* <th className="px-4 py-2.5">Approval Code</th> */}
                                   </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100 text-[10px] font-semibold text-slate-600">
@@ -1267,16 +1267,16 @@ export default function OmnixEci() {
                                         <td className="px-4 py-2 text-right font-mono text-slate-800">
                                           {p.PaymentAmount?.toLocaleString('id-ID') || 0}
                                         </td>
-                                        <td className="px-4 py-2 font-mono">{p.CardNo || '-'}</td>
-                                        <td className="px-4 py-2">{p.CardName}</td>
-                                        <td className="px-4 py-2">{p.CardHolder}</td>
-                                        <td className="px-4 py-2">{p.CardType}</td>
-                                        <td className="px-4 py-2 font-mono">{p.EDCCode}</td>
-                                        <td className="px-4 py-2">{p.EDCName}</td>
+                                        {/* <td className="px-4 py-2 font-mono">{p.CardNo || '-'}</td> */}
+                                        {/* <td className="px-4 py-2">{p.CardName}</td> */}
+                                        {/* <td className="px-4 py-2">{p.CardHolder}</td> */}
+                                        {/* <td className="px-4 py-2">{p.CardType}</td> */}
+                                        {/* <td className="px-4 py-2 font-mono">{p.EDCCode}</td> */}
+                                        {/* <td className="px-4 py-2">{p.EDCName}</td> */}
                                         <td className="px-4 py-2 font-mono">{p.TenderType}</td>
                                         <td className="px-4 py-2">{p.TenderName}</td>
                                         <td className="px-4 py-2">{p.TRNTYPE}</td>
-                                        <td className="px-4 py-2 font-mono text-slate-500">{p.ApprovalCode || '-'}</td>
+                                        {/* <td className="px-4 py-2 font-mono text-slate-500">{p.ApprovalCode || '-'}</td> */}
                                       </tr>
                                     ))
                                   )}
@@ -1294,34 +1294,38 @@ export default function OmnixEci() {
                           <table className="w-full text-left border-collapse">
                             <thead>
                               <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                                <th className="px-5 py-3">Balance Point</th>
                                 <th className="px-5 py-3">Point</th>
                                 <th className="px-5 py-3">Expired Date</th>
-                                <th className="px-5 py-3">Reedem Date</th>
+                                <th className="px-5 py-3">Redeem Date</th>
                                 <th className="px-5 py-3">Flag Movement</th>
                                 <th className="px-5 py-3">Article</th>
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100 text-[10px] font-semibold text-slate-700">
                               <tr className="hover:bg-slate-50/50">
-                                <td className="px-5 py-3.5">00596</td>
+                                <td className="px-5 py-3.5">35</td>
+                                <td className="px-5 py-3.5">-5</td>
                                 <td className="px-5 py-3.5">12-03-2026</td>
-                                <td className="px-5 py-3.5">12-03-2026</td>
-                                <td className="px-5 py-3.5">Lorem Ipsum text</td>
-                                <td className="px-5 py-3.5">Lorem Ipsum text</td>
+                                <td className="px-5 py-3.5">02-03-2026</td>
+                                <td className="px-5 py-3.5">Expired</td>
+                                <td className="px-5 py-3.5">-</td>
                               </tr>
                               <tr className="hover:bg-slate-50/50">
-                                <td className="px-5 py-3.5">0004</td>
-                                <td className="px-5 py-3.5">12-03-2026</td>
-                                <td className="px-5 py-3.5">12-03-2026</td>
-                                <td className="px-5 py-3.5">Lorem Ipsum text</td>
-                                <td className="px-5 py-3.5">Lorem Ipsum text</td>
+                                <td className="px-5 py-3.5">40</td>
+                                <td className="px-5 py-3.5">+30</td>
+                                <td className="px-5 py-3.5">15-02-2026</td>
+                                <td className="px-5 py-3.5">07-02-2026</td>
+                                <td className="px-5 py-3.5">Redeem</td>
+                                <td className="px-5 py-3.5">12453</td>
                               </tr>
                               <tr className="hover:bg-slate-50/50">
-                                <td className="px-5 py-3.5">004947</td>
-                                <td className="px-5 py-3.5">12-03-2026</td>
-                                <td className="px-5 py-3.5">12-03-2026</td>
-                                <td className="px-5 py-3.5">Lorem Ipsum text</td>
-                                <td className="px-5 py-3.5">Lorem Ipsum text</td>
+                                <td className="px-5 py-3.5">10</td>
+                                <td className="px-5 py-3.5">+10</td>
+                                <td className="px-5 py-3.5">12-01-2026</td>
+                                <td className="px-5 py-3.5">02-01-2026</td>
+                                <td className="px-5 py-3.5">Redeem</td>
+                                <td className="px-5 py-3.5">01231</td>
                               </tr>
                             </tbody>
                           </table>
