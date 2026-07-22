@@ -1050,7 +1050,7 @@ export default function OmnixEci() {
                       </div>
                       <div>
                         <span className="text-slate-400 font-semibold block mb-0.5">Balance Point</span>
-                        <span className="font-bold text-slate-800 text-[11px] font-mono">60</span>
+                        <span className="font-bold text-slate-800 text-[11px] font-mono">35</span>
                       </div>
 
                     </div>
